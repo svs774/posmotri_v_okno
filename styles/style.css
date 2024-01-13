@@ -9,11 +9,14 @@ html {
 }
 
 .page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
   color: #fff;
-  font-family: "Fira Sans Condensed", Oswald ,sans-serif;
+  font-family: "Fira Sans Condensed", Oswald, sans-serif;
   font-size: 18px;
   background-color: #1b1919;
 }
@@ -41,7 +44,7 @@ ol {
   display: grid;
   grid-template-columns: 711px 399px;
   gap: 30px;
-  padding: 133px 30px;
+  /* padding: 133px 30px; */
 }
 
 .result {
@@ -51,14 +54,15 @@ ol {
 }
 
 .result__video-container {
-  padding-bottom: 12px;
+  margin-bottom: 16px;
+  max-height: 386px;
   position: relative;
 }
 
 .result__video {
   width: 100%;
   object-fit: cover;
-  max-height: 386px;
+  height: 100%;
 }
 
 .search-form {
@@ -75,11 +79,12 @@ ol {
 
 .search-form__fieldset {
   border: none;
-  padding-bottom: 4px;
 }
 
 .search-form__checkbox-list {
   display: flex;
+  gap: 15px;
+  padding-bottom: 5px;
 }
 
 .search-form__fieldset-title {
@@ -94,10 +99,10 @@ ol {
 
 .search-form__label-text {
   cursor: pointer;
-  padding: 0 15px 0 5px;
+  padding: 0 0 0 5px;
 }
 
-.search-form__label-text:hover {
+.search-form__label:hover .search-form__label-text {
   text-decoration-line: underline;
 }
 
@@ -105,7 +110,7 @@ ol {
   width: 225px;
   border: none;
   background-color: transparent;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(#fff);
   font-family: Fira Sans Condensed, Oswald, sans-serif;
   font-size: 18px;
   font-style: normal;
@@ -120,9 +125,28 @@ ol {
   outline: none;
 }
 
-.search-form__label:has(:focus-visible) {
+.search-form__textfield:active {
   outline: none;
   border: 1px solid #fff;
+}
+
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid #fff;
+  padding: 1px 1px;
+  border: none;
+}
+
+.button {
+  min-height: 34px;
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  text-align: center;
+  font-family: Fira Sans Condensed, Oswald, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
 
 .button:hover {
@@ -134,9 +158,12 @@ ol {
   background: #545050;
 }
 
-.button:has(:focus-visible) {
+.button:focus {
   outline: none;
-  border: 1px solid #fff;
+}
+
+.button:focus-visible {
+  outline: 1px solid #fff;
 }
 
 .search-form__pseudo-checkbox {
@@ -149,38 +176,18 @@ ol {
   cursor: pointer;
 }
 
-.search-form__pseudo-checkbox:has(:focus-visible) {
-  outline: none;
-  border: 1px solid #fff;
-}
-
 .search-form__pseudo-checkbox::before {
   content: "";
-  left: 1px;
-  top: 1px;
   min-width: 15px;
   min-height: 15px;
 }
 
 .search-form__checkbox:checked + .search-form__pseudo-checkbox::before {
   background-color: #fff;
-  border: 1px solid #fff;
 }
 
 .search-form__submit-button {
-  display: block;
-  min-width: 194px;
-  min-height: 34px;
-  background-color: transparent;
-  border: 1px solid #fff;
-  color: #fff;
-  text-align: center;
-  font-family: Fira Sans Condensed, Oswald, sans-serif;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  margin-bottom: 6px;
+  width: 194px;
 }
 
 .visually-hidden {
@@ -248,27 +255,28 @@ ol {
 
 .content__video-card {
   display: flex;
+  justify-content: space-between;
 }
 
-.content__video-card:hover {
+.content__card-link:hover {
   text-decoration-line: underline;
 }
 
-.content__video-card:active {
+.content__card-link:active {
   background: #545050;
 }
 
-.content__video-card:focus {
+.content__card-link:focus {
   outline: none;
 }
 
-.content__video-card:has(:focus-visible) {
-  outline: none;
-  border: 1px solid #fff;
+.content__card-link:focus-visible {
+  outline: 1px solid #fff;
 }
 
 .content__video-card-description-container {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .content__video-card-title {
@@ -288,26 +296,13 @@ ol {
   font-weight: 400;
 }
 
-.content__video-card-description:hover {
-  text-decoration-line: underline;
-}
-
 .content__video-card-thumbnail {
-  overflow: hidden;
   object-fit: cover;
-  max-width: 380px;
+  width: 194px;
+  height: 103px;
 }
 
 .more-button {
   width: 399px;
-  background-color: transparent;
-  color: #fff;
-  text-align: center;
-  font-family: Fira Sans Condensed, Oswald, sans-serif;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  border: 1px solid #fff;
   margin-bottom: 1px;
 }
