@@ -163,6 +163,7 @@ ol {
 }
 
 .button:focus-visible {
+  outline-offset: -3px;
   outline: 1px solid #fff;
 }
 
